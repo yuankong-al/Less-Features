@@ -9,6 +9,10 @@ import net.minecraftforge.fml.config.ModConfig;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+/*
+作者是java和模组开发的新人，代码方面有很多不足的地方，请见谅。
+*/
+
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("lessfeatures")
 public class LessFeatures {
