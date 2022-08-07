@@ -140,7 +140,6 @@ public class FallWater {
                     if(thisEntityDate2.get(entity)!=null && entityList.get(entity)!=null){//处理落地船不足十格的下落受伤
                         if(thisEntityDate2.get(entity) - entity.getPosY()<4 &&
                                 getBlock(world,entityList.get(entity),0,-1,0) != Blocks.AIR &&
-                                /*(world.getBlockState(new BlockPos(entityList.get(entity).getPosX(), entityList.get(entity).getPosY() - 1, entityList.get(entity).getPosZ())).getBlock() != Blocks.WATER || world.getBlockState(new BlockPos(entityList.get(entity).getPosX(), entityList.get(entity).getPosY() - 0.2, entityList.get(entity).getPosZ())).getBlock() != Blocks.WATER) &&*/
                                 ((getBlock(world,entity,0,-1.3,0) != Blocks.WATER && getBlock(world,entity,0,-1,0) != Blocks.WATER) && getBlock(world,entity,0,-0.5,0) != Blocks.WATER)){
                             entity.attackEntityFrom(DamageSource.FALL,fallHart(entity));
                             entity.playSound(SoundEvents.ENTITY_GENERIC_BIG_FALL, 1.0f, 1.0f);
@@ -229,7 +228,7 @@ public class FallWater {
         if(thisEntityDate2.get(entity)!=null){
             newFallDistance = (thisEntityDate2.get(entity) - entity.getPosY());
         }
-        DecimalFormat df = new DecimalFormat("#.0");//将数值保留两位小数
+        DecimalFormat df = new DecimalFormat("#.0");//将数值保留一位小数
         float hurt = Float.parseFloat(df.format(newFallDistance));//将double转为float;
         if(hurt<1){
             return 1;
